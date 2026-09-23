@@ -1,380 +1,471 @@
-<!DOCTYPE html>
-<!--
-  ============================================================================
-    MY PROFESSIONAL PORTFOLIO
-    Sayid Omar Al Faisal · Documentary Filmmaker and Photographer
-  ============================================================================
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sayid Omar Al Faisal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#121214;
+    --bg-soft:#1a1a1d;
+    --paper:#F4EFE4;
+    --ink:#1c1a16;
+    --ink-soft:#4a463d;
+    --gold:#D9A441;
+    --teal:#5C8378;
+    --line:rgba(244,239,228,0.14);
+    --line-dark:rgba(28,26,22,0.14);
+    --font-display: 'Fraunces', serif;
+    --font-body: 'Inter', sans-serif;
+    box-sizing: border-box;
+  }
+  *{box-sizing:inherit; margin:0; padding:0;}
+  html{
+    scroll-behavior:smooth;
+    scroll-padding-top: calc(64px + env(safe-area-inset-top,0px));
+  }
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--font-body);
+    line-height:1.55;
+    padding-top: env(safe-area-inset-top,0px);
+    padding-bottom: env(safe-area-inset-bottom,0px);
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit;}
+  .wrap{max-width:920px; margin:0 auto; padding:0 28px;}
 
-  <!-- CHANGE THIS (1): the browser TAB title -->
-  <title>Sayid Omar Al Faisal ·  Portfolio</title>
+  /* NAV */
+  nav{
+    position:sticky; top:0; z-index:50;
+    padding-top: env(safe-area-inset-top,0px);
+    background:rgba(18,18,20,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:64px; max-width:1000px;
+  }
+  .nav-name{
+    color:var(--paper); font-family:var(--font-display); font-weight:500;
+    font-size:1.02rem; letter-spacing:0.01em; text-decoration:none;
+  }
+  .nav-links{display:flex; gap:26px; list-style:none;}
+  .nav-links a{
+    color:#c9c4b8; text-decoration:none; font-size:0.88rem;
+  }
+  .nav-links a:hover{color:var(--gold);}
+  .nav-toggle{display:none;}
 
-  <!--
-    FAVICON — the little icon shown on the browser TAB, next to the title.
-    Right now it's a small coloured circle with a letter "SF" drawn inside.
-    CHANGE THIS (2): to use your own initial, change the letter  SF  near the end
-    of the line below (look for  >SF<  ). You can also change the two colours:
-      %232f3c7e  is the navy background,  %23f96167  is not used here.
-    (%23 just means the "#" of a colour code.)
+  /* HERO */
+  header.hero{
+    background:
+      radial-gradient(ellipse at 78% 12%, rgba(217,164,65,0.14), transparent 55%),
+      var(--bg);
+    color:var(--paper);
+    padding:96px 0 88px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero .wrap{max-width:1000px; display:grid; grid-template-columns:1fr auto; gap:48px; align-items:end;}
+  .hero-kicker{
+    color:var(--gold); font-size:0.92rem; margin-bottom:18px;
+  }
+  h1.hero-name{
+    font-family:var(--font-display);
+    font-weight:500;
+    font-size:clamp(2.6rem, 6.4vw, 4.4rem);
+    line-height:1.02;
+    letter-spacing:-0.01em;
+  }
+  .hero-role{
+    margin-top:20px; max-width:520px;
+    font-size:1.08rem; color:#d8d3c6; font-weight:400;
+  }
+  .hero-photo{
+    width:132px; height:132px; border-radius:50%;
+    overflow:hidden; border:1px solid var(--line);
+    justify-self:end;
+  }
+  .hero-photo img{width:100%; height:100%; object-fit:cover;}
+  .hero-meta{
+    margin-top:36px; display:flex; flex-wrap:wrap; gap:10px 28px;
+    font-size:0.86rem; color:#a9a397;
+  }
+  .hero-meta a{text-decoration:none; border-bottom:1px solid transparent;}
+  .hero-meta a:hover{color:var(--gold); border-color:var(--gold);}
 
-    Advanced: to use a real image icon instead, put an icon file in the same
-    folder and replace this whole line with:
-      <link rel="icon" href="myicon.png">
-  -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232f3c7e'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='38' font-weight='bold' fill='%23ffffff' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E">
+  section{padding:76px 0;}
+  section.alt{background:#EDE7D9;}
+  h2.section-title{
+    font-family:var(--font-display); font-weight:500;
+    font-size:1.7rem; margin-bottom:34px; color:var(--ink);
+  }
 
-  <!-- This line loads nice fonts from Google. You can leave it as is. -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lora:ital@0;1&display=swap" rel="stylesheet">
+  /* ABOUT */
+  .about-grid{display:grid; grid-template-columns:1fr; gap:22px;}
+  .about-grid p{max-width:640px; font-size:1.02rem; color:var(--ink-soft);}
+  .about-grid p + p{margin-top:14px;}
 
-  <style>
-    /* ========================================================================
-       CSS — controls all the colours, fonts, spacing and effects.
-       The easiest things to change are the COLOURS in this first block.
-       ======================================================================== */
-    :root{
-      --navy:   #2f3c7e;   /* CHANGE THIS (3): main colour  */
-      --coral:  #f96167;   /* CHANGE THIS (4): accent colour */
-      --gold:   #f4b740;
-      --ink:    #1f2333;
-      --muted:  #6a7080;
-      --bg:     #f6f7fb;
-      --card:   #ffffff;
-      --line:   #e7e9f2;
-    }
+  /* EXPERIENCE */
+  .exp-item{
+    display:grid; grid-template-columns:170px 1fr; gap:24px;
+    padding:26px 0; border-top:1px solid var(--line-dark);
+  }
+  .exp-item:last-child{border-bottom:1px solid var(--line-dark);}
+  .exp-date{font-size:0.84rem; color:var(--teal); padding-top:4px;}
+  .exp-role{font-family:var(--font-display); font-size:1.18rem; font-weight:500;}
+  .exp-org{font-size:0.92rem; color:var(--ink-soft); margin-top:2px;}
+  .exp-desc{margin-top:12px; font-size:0.95rem; color:var(--ink-soft); max-width:560px;}
+  .exp-desc li{margin-left:18px; margin-top:5px;}
+  .exp-tag{
+    display:inline-block; margin-top:14px; font-size:0.76rem;
+    color:var(--gold); border:1px solid rgba(217,164,65,0.4);
+    padding:3px 10px; border-radius:100px;
+  }
 
-    *{ margin:0; padding:0; box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }           /* smooth scrolling when nav links are clicked */
-    body{
-      font-family:'Poppins',sans-serif;
-      color:var(--ink);
-      background:var(--bg);
-      line-height:1.65;
-    }
-    h1,h2,h3{ line-height:1.2; }
-    a{ text-decoration:none; color:inherit; }
-    section{ padding:80px 24px; }
-    .wrap{ max-width:1000px; margin:0 auto; }
+  /* FEATURED / AWARD */
+  .feature-card{
+    background:var(--bg); color:var(--paper);
+    border-radius:6px; padding:38px 36px;
+    display:grid; grid-template-columns:1fr; gap:14px;
+  }
+  .feature-card .tag{color:var(--gold); font-size:0.86rem;}
+  .feature-card h3{
+    font-family:var(--font-display); font-weight:500; font-size:1.5rem; margin-top:6px;
+  }
+  .feature-card p{color:#cfc9bb; max-width:560px; font-size:0.98rem;}
 
-    /* ---- section heading style ---- */
-    .eyebrow{ color:var(--coral); font-weight:600; letter-spacing:2px; text-transform:uppercase; font-size:13px; }
-    .title{ font-size:34px; font-weight:700; margin:6px 0 34px; }
-    .title span{ color:var(--navy); }
+  /* SKILLS */
+  .skills-list{display:flex; flex-wrap:wrap; gap:10px;}
+  .skill-pill{
+    font-size:0.86rem; padding:7px 14px; border:1px solid var(--line-dark);
+    border-radius:100px; color:var(--ink-soft);
+  }
 
-    /* ================= NAVIGATION BAR (sticky at top) ================= */
-    .nav{
-      position:sticky; top:0; z-index:100;
-      background:rgba(255,255,255,0.92);
-      backdrop-filter:blur(8px);
-      border-bottom:1px solid var(--line);
-      display:flex; justify-content:space-between; align-items:center;
-      padding:16px 32px;
-    }
-    .nav .logo{ font-weight:700; font-size:20px; color:var(--navy); }
-    .nav .logo b{ color:var(--coral); }
-    .nav ul{ display:flex; gap:26px; list-style:none; }
-    .nav a{ color:var(--ink); font-weight:500; font-size:15px; transition:color .2s; }
-    .nav a:hover{ color:var(--coral); }
-    @media(max-width:640px){ .nav ul{ display:none; } }   /* hide menu on small phones */
+  /* TWO COL: education / volunteering */
+  .two-col{display:grid; grid-template-columns:1fr; gap:44px;}
+  @media(min-width:720px){.two-col{grid-template-columns:1fr 1fr;}}
+  .col-item{margin-bottom:26px;}
+  .col-item h4{font-family:var(--font-display); font-weight:500; font-size:1.05rem;}
+  .col-item .sub{font-size:0.85rem; color:var(--teal); margin-top:3px;}
+  .col-item p{margin-top:8px; font-size:0.92rem; color:var(--ink-soft);}
 
-    /* ================= HERO ================= */
-    .hero{
-      background:linear-gradient(135deg, #2f3c7e 0%, #4450a0 60%, #6a74c0 100%);
-      color:#fff; text-align:center;
-      padding:90px 24px;
-      position:relative; overflow:hidden;
-    }
-    .hero::after{                     /* soft decorative circle */
-      content:""; position:absolute; width:420px; height:420px; border-radius:50%;
-      background:rgba(249,97,103,.25); top:-160px; right:-120px;
-    }
-    .hero img{
-      width:150px; height:150px; border-radius:50%;
-      border:5px solid rgba(255,255,255,.85); object-fit:cover;
-      box-shadow:0 10px 30px rgba(0,0,0,.25); position:relative; z-index:1;
-    }
-    .hero h1{ font-size:44px; font-weight:700; margin:18px 0 6px; position:relative; z-index:1; }
-    .hero .role{ font-size:20px; color:var(--gold); font-weight:500; position:relative; z-index:1; }
-    .hero .tagline{ max-width:560px; margin:16px auto 0; color:#dfe3f5; position:relative; z-index:1; }
-    /* hero buttons */
-    .hero-btns{ margin-top:26px; position:relative; z-index:1; }
-    .btn{
-      display:inline-block; padding:13px 26px; border-radius:30px; font-weight:600;
-      transition:transform .2s, box-shadow .2s; margin:6px;
-    }
-    .btn:hover{ transform:translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,.2); }
-    .btn-primary{ background:var(--coral); color:#fff; }
-    .btn-ghost{ border:2px solid rgba(255,255,255,.7); color:#fff; }
+  /* CONTACT / FOOTER */
+  footer{
+    background:var(--bg); color:var(--paper); padding:72px 0 40px;
+  }
+  footer .wrap{max-width:1000px;}
+  footer h2{
+    font-family:var(--font-display); font-weight:500;
+    font-size:clamp(1.8rem,4vw,2.5rem); max-width:540px; line-height:1.15;
+  }
+  .footer-links{margin-top:30px; display:flex; flex-wrap:wrap; gap:14px 30px;}
+  .footer-links a{
+    text-decoration:none; color:var(--paper); font-size:0.98rem;
+    border-bottom:1px solid var(--line); padding-bottom:3px;
+  }
+  .footer-links a:hover{color:var(--gold); border-color:var(--gold);}
+  .footer-bottom{
+    margin-top:56px; padding-top:22px; border-top:1px solid var(--line);
+    font-size:0.8rem; color:#7d7970; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  }
 
-    /* ================= ABOUT + STATS ================= */
-    .about-grid{ display:grid; grid-template-columns:1.4fr 1fr; gap:40px; align-items:center; }
-    @media(max-width:760px){ .about-grid{ grid-template-columns:1fr; } }
-    .about p{ color:var(--muted); margin-bottom:14px; }
-    .stats{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-    .stat{
-      background:var(--card); border:1px solid var(--line); border-radius:14px;
-      padding:22px; text-align:center;
-    }
-    .stat .num{ font-size:32px; font-weight:700; color:var(--navy); }
-    .stat .lbl{ font-size:13px; color:var(--muted); }
+  @media(max-width:680px){
+    .hero .wrap{grid-template-columns:1fr; gap:26px;}
+    .hero-photo{justify-self:start; width:96px; height:96px;}
+    .exp-item{grid-template-columns:1fr; gap:6px;}
+    .nav-links{display:none;}
+  }
 
-    /* ================= SKILLS ================= */
-    .skills{ display:flex; flex-wrap:wrap; gap:12px; }
-    .chip{
-      background:var(--card); border:1px solid var(--line); border-radius:30px;
-      padding:10px 20px; font-weight:500; color:var(--navy);
-      transition:.2s;
-    }
-    .chip:hover{ background:var(--navy); color:#fff; transform:translateY(-2px); }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){ }
+  }
 
-    /* ================= EXPERIENCE TIMELINE ================= */
-    .timeline{ border-left:3px solid var(--line); margin-left:10px; }
-    .tl-item{ position:relative; padding:0 0 34px 30px; }
-    .tl-item::before{
-      content:""; position:absolute; left:-11px; top:4px;
-      width:18px; height:18px; border-radius:50%; background:var(--coral);
-      border:4px solid var(--bg);
-    }
-    .tl-item h3{ font-size:19px; }
-    .tl-item .when{ color:var(--coral); font-size:14px; font-weight:600; }
-    .tl-item p{ color:var(--muted); margin-top:4px; }
+  /* --- dynamic layer --- */
+  #progress{
+    position:fixed; top:0; left:0; height:2px; width:0%;
+    background:var(--gold); z-index:100; transition:width 0.1s linear;
+  }
+  @media(min-width:1px){ #progress{ top: env(safe-area-inset-top,0px); } }
 
-    /* ================= PROJECT CARDS ================= */
-    .cards{ display:grid; grid-template-columns:repeat(2,1fr); gap:22px; }
-    @media(max-width:760px){ .cards{ grid-template-columns:1fr; } }
-    /* Note: modern browsers show these 2-per-row; they stack on phones. */
-    .card{
-      background:var(--card); border:1px solid var(--line); border-radius:16px;
-      padding:26px; transition:transform .25s, box-shadow .25s;
-    }
-    .card:hover{ transform:translateY(-6px); box-shadow:0 16px 34px rgba(47,60,126,.12); }
-    .card .ic{
-      width:52px; height:52px; border-radius:12px; display:flex; align-items:center;
-      justify-content:center; font-size:24px; margin-bottom:14px;
-      background:linear-gradient(135deg,var(--navy),var(--coral)); color:#fff;
-    }
-    .card h3{ font-size:20px; margin-bottom:8px; }
-    .card p{ color:var(--muted); font-size:15px; margin-bottom:14px; }
-    .card .link{ color:var(--coral); font-weight:600; font-size:14px; }
-    .card .link:hover{ text-decoration:underline; }
+  .hero-kicker, h1.hero-name, .hero-role, .hero-meta, .hero-photo{
+    opacity:0; transform:translateY(16px);
+    animation: rise 0.8s cubic-bezier(.2,.8,.2,1) forwards;
+  }
+  .hero-kicker{animation-delay:0.05s;}
+  h1.hero-name{animation-delay:0.16s;}
+  .hero-role{animation-delay:0.30s;}
+  .hero-meta{animation-delay:0.42s;}
+  .hero-photo{animation-delay:0.2s; transform:translateY(16px) scale(0.94);}
+  @keyframes rise{ to{ opacity:1; transform:translateY(0) scale(1);} }
 
-    /* ================= VIDEO ================= */
-    .video-frame{ border-radius:16px; overflow:hidden; box-shadow:0 12px 30px rgba(0,0,0,.12); }
-    .video-frame iframe{ width:100%; height:440px; border:none; display:block; }
-    @media(max-width:640px){ .video-frame iframe{ height:240px; } }
+  h1.hero-name{
+    background:linear-gradient(100deg, var(--paper) 40%, var(--gold) 60%, var(--paper) 80%);
+    background-size:220% 100%;
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    animation: rise 0.8s cubic-bezier(.2,.8,.2,1) forwards, sheen 7s ease-in-out 1.1s infinite;
+  }
+  @keyframes sheen{ 0%,100%{background-position:0% 0;} 50%{background-position:100% 0;} }
 
-    /* ================= CONTACT ================= */
-    .contact{ background:var(--navy); color:#fff; text-align:center; border-radius:24px; padding:56px 24px; }
-    .contact h2{ font-size:30px; margin-bottom:10px; }
-    .contact p{ color:#c9cef0; max-width:480px; margin:0 auto 24px; }
-    .socials{ margin-top:26px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
-    .socials a{
-      width:46px; height:46px; border-radius:50%; background:rgba(255,255,255,.12);
-      display:flex; align-items:center; justify-content:center; font-size:18px;
-      transition:.2s;
-    }
-    .socials a:hover{ background:var(--coral); transform:translateY(-3px); }
+  .hero-photo{
+    transition: transform 0.35s cubic-bezier(.2,.8,.2,1);
+    will-change: transform;
+  }
+  .hero-photo:hover{ transform: scale(1.05) rotate(-1.5deg); }
 
-    /* ================= FOOTER ================= */
-    .footer{ text-align:center; padding:30px; color:var(--muted); font-size:14px; }
-  </style>
+  [data-reveal]{
+    opacity:0; transform:translateY(22px);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(.2,.8,.2,1);
+  }
+  [data-reveal].in{ opacity:1; transform:translateY(0); }
+
+  .exp-item{ transition: background-color 0.3s ease, padding-left 0.3s ease; }
+  .exp-item:hover{ background-color: rgba(28,26,22,0.035); padding-left:8px; }
+
+  .skill-pill{ transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease; }
+  .skill-pill:hover{ transform:translateY(-3px); background:var(--ink); color:var(--paper); border-color:var(--ink); }
+
+  .footer-links a, .nav-links a, .hero-meta a{
+    position:relative; padding-bottom:3px;
+  }
+  .footer-links a::after, .nav-links a::after, .hero-meta a::after{
+    content:''; position:absolute; left:0; bottom:-2px; width:0; height:1px;
+    background:var(--gold); transition:width 0.25s ease;
+  }
+  .footer-links a:hover::after, .nav-links a:hover::after, .hero-meta a:hover::after{ width:100%; }
+
+  .feature-card{
+    position:relative; overflow:hidden;
+  }
+  .feature-card::before{
+    content:''; position:absolute; inset:-40% -10% auto auto; width:60%; height:180%;
+    background:radial-gradient(circle, rgba(217,164,65,0.16), transparent 65%);
+    pointer-events:none;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{ animation:none !important; transition:none !important; }
+    [data-reveal]{ opacity:1; transform:none; }
+  }
+</style>
 </head>
-
 <body>
+<div id="progress"></div>
 
-  <!-- ======================= NAV BAR ======================= -->
-  <nav class="nav">
-    <!-- CHANGE THIS (5): your initials / short name in the logo -->
-    <div class="logo">Fatima<b>.</b></div>
-    <ul>
-      <!-- These links jump to the sections below. Leave the #names as they are. -->
+<nav>
+  <div class="wrap">
+    <a class="nav-name" href="#top">Sayid Omar Al Faisal</a>
+    <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#work">Work</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-  </nav>
-
-  <!-- ======================= HERO ======================= -->
-  <header class="hero">
-    <!--
-      CHANGE THIS (6): YOUR PHOTO.
-      Option A (easiest, offline): put your photo in the SAME FOLDER as this file
-        and replace the long src="..." with just  src="myphoto.jpg"
-      Option B (online): upload to https://postimages.org and paste the "direct link".
-    -->
-    <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect width='300' height='300' fill='%236a74c0'/%3E%3Ccircle cx='150' cy='115' r='58' fill='%23ffd38a'/%3E%3Crect x='72' y='185' width='156' height='96' rx='26' fill='%23f96167'/%3E%3Ctext x='150' y='290' font-family='sans-serif' font-size='19' fill='%23fff' text-anchor='middle'%3Eyour photo%3C/text%3E%3C/svg%3E"
-         alt="my photo">
-
-    <!-- CHANGE THIS (7): your name -->
-    <h1>Sayid Omar Al Faisal</h1>
-
-    <!-- CHANGE THIS (8): your role / title -->
-    <div class="role">Documentary Filmmaker and Photographer</div>
-
-    <!-- CHANGE THIS (9): one-line tagline about you -->
-    <p class="tagline">B.Ed. student at IER, University of Dhaka, passionate about photography, cycling and travelling.</p>
-
-    <div class="hero-btns">
-      <!-- CHANGE THIS (10): put your email after mailto: (keep the word mailto:) -->
-      <a class="btn btn-primary" href="mailto:sayidfaisal.contact@gmail.com">✉ Contact Me</a>
-      <!-- CHANGE THIS (11): a link to your CV, LinkedIn, or leave # for now -->
-      <a class="btn btn-ghost" href="#work">View My Work</a>
-    </div>
-  </header>
-
-  <!-- ======================= ABOUT ======================= -->
-  <section id="about" class="wrap">
-    <div class="eyebrow">Get to know me</div>
-    <h2 class="title">About <span>Me</span></h2>
-    <div class="about-grid">
-      <div class="about">
-        <!-- CHANGE THIS (12): write 2–3 sentences about yourself -->
-        <p>I'm an independent Documentary Filmmaker and Photographer who loves to explore places and capture memories.</p>
-      </div>
-      <!-- CHANGE THIS (13): your numbers. Edit the big number and the label under it. -->
-      <div class="stats">
-        <div class="stat"><div class="num">3+</div><div class="lbl">Years Studying Education</div></div>
-        <div class="stat"><div class="num">120</div><div class="lbl">Students Taught</div></div>
-        <div class="stat"><div class="num">15</div><div class="lbl">Lesson Plans Made</div></div>
-        <div class="stat"><div class="num">4</div><div class="lbl">Workshops Attended</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================= SKILLS ======================= -->
-  <section id="skills" class="wrap">
-    <div class="eyebrow">What I'm good at</div>
-    <h2 class="title">My <span>Skills</span></h2>
-    <!--
-      CHANGE THIS (14): each <span class="chip"> is one skill.
-      Edit the words, delete one, or copy a line to add more.
-    -->
-    <div class="skills">
-      <span class="chip">Scripting</span>
-      <span class="chip">Cinematography</span>
-      <span class="chip">Video Editing</span>
-      <span class="chip">Photography</span>
-      <span class="chip">Storytelling</span>
-    </div>
-  </section>
-
-  <!-- ======================= EXPERIENCE (TIMELINE) ======================= -->
-  <section id="experience" class="wrap">
-    <div class="eyebrow">My journey</div>
-    <h2 class="title">Experience &amp; <span>Education</span></h2>
-    <!--
-      CHANGE THIS (15): each .tl-item is one entry on the timeline.
-      Copy a whole .tl-item block to add another; delete one to remove it.
-    -->
-    <div class="timeline">
-      <div class="tl-item">
-        <div class="when">2023 – Present</div>
-        <h3>B.Ed., Institute of Education and Research</h3>
-        <p>University of Dhaka — studying curriculum, pedagogy and child development.</p>
-      </div>
-      <div class="tl-item">
-        <div class="when">2024</div>
-        <h3>Teaching Practicum</h3>
-        <p>Ran a two-week reading programme for Class 3 at a local primary school.</p>
-      </div>
-      <div class="tl-item">
-        <div class="when">2023</div>
-        <h3>Volunteer Tutor</h3>
-        <p>Taught weekend English classes to underprivileged children.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================= WORK / PROJECTS ======================= -->
-  <section id="work" class="wrap">
-    <div class="eyebrow">Things I've made</div>
-    <h2 class="title">My <span>Work</span></h2>
-    <!--
-      CHANGE THIS (16): each .card is one project.
-      - Change the emoji, title and description.
-      - In the link, put a real web address inside href="..." (or leave # for now).
-      Copy a whole .card block to add more projects.
-    -->
-    <div class="cards">
-      <div class="card">
-        <div class="ic">📚</div>
-        <h3>Reading Programme</h3>
-        <p>A structured two-week plan that improved reading fluency in young learners.</p>
-        <a class="link" href="#">View details →</a>
-      </div>
-      <div class="card">
-        <div class="ic">🔬</div>
-        <h3>Research Assignment</h3>
-        <p>Studied how storytelling boosts vocabulary in early childhood education.</p>
-        <a class="link" href="#">Read summary →</a>
-      </div>
-      <div class="card">
-        <div class="ic">🎨</div>
-        <h3>Classroom Materials</h3>
-        <p>Designed colourful flashcards and worksheets for teaching the alphabet.</p>
-        <a class="link" href="#">See samples →</a>
-      </div>
-      <div class="card">
-        <div class="ic">🧩</div>
-        <h3>Learning Games</h3>
-        <p>Created simple group games that make maths practice fun and social.</p>
-        <a class="link" href="#">Learn more →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================= VIDEO ======================= -->
-  <section id="video" class="wrap">
-    <div class="eyebrow">Watch</div>
-    <h2 class="title">A Video I <span>Made</span></h2>
-    <!--
-      CHANGE THIS (17): SHOW A YOUTUBE VIDEO.
-      In a YouTube link like  youtube.com/watch?v=ABC123 , copy the code after "v="
-      and put it after  /embed/  below. So watch?v=dQw4w9WgXcQ  becomes
-      src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-    -->
-    <div class="video-frame">
-      <iframe src="https://www.youtube.com/embed/Cqf9Ox2vHRc"
-              title="My video" allowfullscreen></iframe>
-    </div>
-  </section>
-
-  <!-- ======================= CONTACT ======================= -->
-  <section id="contact" class="wrap">
-    <div class="contact">
-      <h2>Let's Connect</h2>
-      <!-- CHANGE THIS (18): a friendly line inviting people to reach you -->
-      <p>I'm always happy to talk about teaching, collaboration, or new ideas in education. Feel free to reach out!</p>
-
-      <!-- CHANGE THIS (19): your email again, after mailto: -->
-      <a class="btn btn-primary" href="mailto:fatima@example.com">✉ Email Me</a>
-
-      <!--
-        CHANGE THIS (20): YOUR SOCIAL / PROFILE LINKS.
-        Put your real profile web addresses inside each href="..."
-        The letters (in, f, ✎, ▶) are just labels — you can change them too.
-        Delete any you don't use.
-      -->
-      <div class="socials">
-        <a href="https://www.linkedin.com" title="LinkedIn">in</a>
-        <a href="https://www.facebook.com" title="Facebook">f</a>
-        <a href="mailto:fatima@example.com" title="Email">✉</a>
-        <a href="https://www.youtube.com" title="YouTube">▶</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================= FOOTER ======================= -->
-  <div class="footer">
-    <!-- CHANGE THIS (21): footer line -->
-    © 2026 Sayid Omar Al Faisal · Built with HTML &amp; IER, University of Dhaka
   </div>
+</nav>
 
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="hero-kicker">Filmmaker &amp; Communications for Social Change</div>
+      <h1 class="hero-name">Sayid Omar<br>Al Faisal</h1>
+      <p class="hero-role">Documentary filmmaker and Director of Photography based in Dhaka. Founder of Lens Flare Studio. I turn field research into films that NGOs use to move people and funders to act.</p>
+      <div class="hero-meta">
+        <a href="mailto:saayidfaisal@gmail.com">saayidfaisal@gmail.com</a>
+        <a href="tel:+8801644541259">+880 1644541259</a>
+        <a href="https://www.linkedin.com/in/sayidomaralfaisal/" target="_blank" rel="noopener">LinkedIn</a>
+        <span>Dhaka, Bangladesh</span>
+      </div>
+    </div>
+    <div class="hero-photo"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAD6APoDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9OKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiqF9rthprEXN3BCVGWEkgUgevPauB174++G/DusXGn3NxvkiON0Q3A+oyOhFUot7Aem0Vx1j8WvDF7Esn9r2kcbfdaSZV7ZwQcEVw3jL9qTwz4V1r+z/OjnRVDvcxtuUD0GOp/SlZjse1UVyvgv4n+G/H9nJcaFqcV+kTbJPL6qcZ5H4/zrqVYMMggj1FIQtFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUABIAyTgVxXxD+Kmi/D7TfPvpt7PlVjiOWJ/l+dYX7QXxFbwB4O8y2m8q+uH2RMp5XHJOM84r4D8V/Fy3vjdXVzdC4lcn5WOMk89R0+lb06fNqx2O4+J3xR1jxRrEtzZxvcGXrg8qvYAntXDf8JBqDNtuXsoZCMs7yncPZsDBryq++Kt00rQxrOI8kMYkByPTPpTLLxL5zedGm0gcq5HT6N1/Ou/TYL2PWtU8SzWtuh86NAU3CRTlPY157qHiyS5uhJqVxb7c7Q+TyPrjA/OqcGsyanE0V1byCIcb3t3AI/9BrivEngSxv2kOl66kMwOTGclM/QZArGRVz0Q+Jdf8G3g1jw9fzWKDGLmzlb25OBz9DmvXvhp+3f480G9I8SIPEVlEm4rEFt5WHqpwQfpx9a+TDpnjTSIPsEwuXshCWM9q3mBxk4O0fNnoMY6CsS01jXrm8dI4UuJUUgvJIyvjpk7uBj0rmlEd09z9kPgp+1V4L+MEpsbDUGi1ILvFteKI5DxkgDvj1r2e3uYrqMSROrr6qc1+B1h8Q73wzGFe5KNGxYG0ndGR89Qw/wr7g/ZF/bnuLm+sPDniy7zayfu4r5xvJbt5h+mfm+maxsS0fotRVbT9Rt9TtY7i2lWWGQbkdDkMPUGrNIkKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKzPE+qtofh3UtQSMyva27zBB1bapOK06wfHhmXwVrpt5UhnFlKVkfop2nk0AfmF8afiZq/ii+kmku5H+0MXbeT93PQc5AryK0u7O33I8KbZiGbafmYj3z70/4p+Io7WVLozoxLkMVx/Ce1eS3XxGe8Lu8olmz8uRtx7nufzrt51Eo9N1TUtO0tFeWcRMxIWGPG//AIETmtDS/GOgGz2nT7j7Rj5pxD5u33GO9eGR+M0t7ie6kjieduEMq7sH1A/xrT0X4p3Uc/ly3cvl9Cqttz+VCq6iOj8T+JbvU7todP8A7QlUfcdoSu71BAqrYaV4xaNvsen3MW/HMkW04+taF74v1i4VJdPmiSF1wXVcn8T19ayP+Ek14LIrXcxJBGA2V96TdwLd9ZeL/Dto15ca9DpoCk+W1wWc/gM/rXK6LqmoeKNR87VtZcWsRI2xZLzH0x0A9zXOeIrq/ubhjPNJP6fMSo/pVTT9VuLCOTyY8SsMeZjp74rFyVwPVU8M+Ho7h59V1s2EUozHZ2371nH+0SABn2BrY0Tw7o2nQW17o+s3IuYZg3lNDtjz/ez9P8mvK/DLWFjHLqusebeSpnybVjgOexPtmri+KbZJ5GLPEjPllROB7Cndbgfp78BPi7qOgnQrBNWe5hkaOKaKR94AJXgZ6cN2r7qRg6hh0IzX4sfsna7qXxG+NPhjT42GnaalwrRgvjc6/NuOeuMZx0r9pYUMcKKTkqoBPrSqzU3dIlKw+iiisRhRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFV9RtEv9PubaRQ6TRNGynuCMYqxQRkYoA/C39pTwnbaD4y8Q6DbwNBJZXsik7iybgecfX+lfO8lhcxkqCTjsOa+sP2zLY/Db45+MbG6t2up5b4XcLP8yiNxuA/8ePvXz9rmq298xaytRbrJg7CxYj2P0rRtWuNK5xBaQ/Kw/Kp7e2lY8V23h3wU+qHc6Ek122mfDAnA8okfSuCeKjB2PSpYKdTVHnug6leacwVZH2n+EjNdfYRX2ryBIrbcznjKjr+FegaF8H5rudQsPyj1XNe7/Df4KrZzwvcRrleQNorJY5N2R3xyt2vJ2PLvhn+ylL4qY3OrvMkTrkAjOc9cVD8UP2V4/CcfnaezvF/EGAr7v8OaMNPtEULwBjtWd4u8LRa6FSeMOg4KkdaqdWSVzWOGpy9xo/MVfhFqd7LIY4WlUeg6CsO+8AXFjdCOaMjnmv0xk+H9jpmmyRwWkaKQeAvWvjT48+G7jQdWkuIEkt4XY7ieBmijiHOVpHNisFCjT5onYfsZ+Are3+Ovg6VH2wyzHcclckKTjP1GMV+wgGABX5I/sTagB8YfB2my3Ime4uvtMOTuI2gkj1Hev1ur0JWvoeEFFFFSIKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/Kf/gq94Km0v4qaX4gRG+z6rp6DeBxviJUj8tn518jfC/wgfFOpNEc/IC2e1fqb+3pH4W+LPw91Hw7ZzC98WaFcK6QRKA8ZYDcpzjgqQeM9K+Bf2b9Dkh8Q6tavGRLDFtI9PmrCtJqm3Hc7aFJ+0jzqyZ2Hhf4aizZUgjMrnA6dK9M0f4bhChnTYfTFeY/E74k3/g+9XTtK3RSxndK69WPYfSuLn/aN8ZCBQxdwO5jORXl/VXON29T6GONjRfKo6H2X4W8KadbOqbF3Z6mvS9H0SGN8KikgelfB3w1/aG1/+2IX1Pc9szYYkYIr6+8J/EePVbRZ4SZFx1HNcrth5ckjujN4mHPE9ctpLe3hHmbVFU5raHUJSYXUemTXyj+0Z8ete8NmO28NyKsuC0jsAce1eHaD+058UNTZo1uo5Yh98KAD+lehTaqx5r6HnVZOjLls7n6BaikcEzwecsjg8qGBI/Cvm/8Aa40GGf4fz3sceJ4pVyVHUGua+HnjvxLrWoR3DTutwWy+GDA+oNeifH2OXUvhlKixlppnjG0Dqc1yygo1U4O+p08/tKMlNW0PHP8Agmp4Yu/EP7SmnXxjMlpo1pPO5I4QshRf1av2Cr8/v2PfBp/ZlaTVdcuBd6n4pe3tbfR7SPdKmW6knpjPPYYr9Aa9uM4yuovY+UrUKlKzmrJ7BRRRWhzBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAH5s/tj2s3h79oPxHqsczWsDWVq/y9JGZCDn6bP1rjf2avClvrGo6v4giI8hoiHx3bOePyr2T/AIKEeBrrXfEtoumBpr6+toj5KfeIVnVsfhg/nXMfCrVLG1sbzTNNtUsbOBUiSJBg4Axz6nOcn1rzIpU60nLqfVy/f4Sm1urf5Hzf8XNO1BNdvJUtZGmdyTKRwBnsa85h+H3inxDJG8MsENqw+ckr8vPOSck1+glz8N4PE8br9jhu0cYZJVzWbb/sv6JBOJnsY0PUpk7fyzis1KUXeKNPY05/E7HxDq/w8vdD1Fo9IujfWh2hXzlt3fgcdfSvtj9krwddDwZfJq8XmXSK2wNzjirup+AtI8PSRIIIvMHCAKOPpXr3wd0r7Jp08ixhN4bt1rJ2q1FpsdHKqFNtM+L/AIzfBjUb68uLpzcS+ZKSyRoWwmemBzXmHh74MuPEJuLXxYmlaeHBktTOySheMoOODmv0wbw/aajdmO5iQsem4VYi+FGiSyiWaxtpnH3WkiUkfQ1th4tQtEyxMqcpXqI+TPg18Ltc03UHv5Li31G1ZyqXDhkk2Z+XPGHI/vEA17N4y8MNNo0BWA3ksMiyrEBkuV5xivYh4UtrGMKsaJGOmBXHa/P5Gr2CRZ3xzCT5Rnp7Vzz9yZpFqpHQ5b9nTxXpXxA1nQ9UubVo9Usrpg6z/eRiCo47YzX2NXzL8KvAVl4W+Jks6qiNqM63KpGOEABOD6Etnivpqu/BxcafvHi5vKEq69ntYKKKK7zwwooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD5y/ao0O/W9sdYttKmvofs/kNdW8LSvbMGbnA6ZDdfavm6w8DeJfDcOoeKbqxubbR5RHCkt1b/ZzJIcnKoeSMA5av0erxj9rWPPwfunxxHcxkn0zkf1rhxFHmTnc9fC4xxUaNuu589eGPiZb20KRiXa3fB5ro9R+JkKWRkEgYYzmvkG81+a1vfkc+gq1e+Mb544LeSXy4m5LevtXz3tKrfKmfXxVJR5mj24fFfwcJ5rvxJdyQXe5ltoycLjs2K9Q+Hnxn8PrBsS7jaHb8rZr5A8a+DrfxVpMczXUELqu5TI4HOO3esTwp4H1Czhjhi1m2+yOwEoM4AA/OvQjGaS5ZHNJxqN3i2j70/4Wr4M8VXEum6brcFzr8eWWG3kDMD6ECrWl/EaeANBcjcyHBJH615V8J/BfhrwxE19p7WE946bZLi2ZS5XuM9RWh4m1GKPUxc20ytEx2SQH7wPqKqtGVOPMpGdN05y5JR+89SufiBFLCxLjGDzmqPgfw1c/Ea71S9tpgtxYtG0UUhwkoO7KkjkcDgjvXj8slw1yArkxsema+lv2abIQaLq82MF5kXP0Un/2aubCXr1LSIx0vq1Fyp7mz4M8Iaxb6rbNf2Mdna2rFw3nCRnODgDHbmvTaKK+ihBQVkfH1asq0uaQUUUVoYhRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABXmv7R2hS+IPgx4mt4FLzRQC4VR1PlsGP6A16VUdxBHdQSQyqHikUoynoQeCKmUeaLj3LhLkkpdj8YtUkBuGIPQ/erp9F0fTfGmgCyvA0VzGCFljfacV1P7VfwYn+DfxJnht/3uh6iDd2TjrGpJBjb3Ug/hivM/D2rfZZ0+fbyK+adKUJWe6PsadeM4J9GPsvgzY2l+y3usXrRqwxFLOwVh6ZBzXcWXwt8DfbI/NS5YE7So1KYDP8A31XUeHI9J13y1vSGYYHJ5Ir1DQfhv4RndJZIt/qrPXZRnOW7R0OVOmtEefaT8AfD11fJPp+p6rZw5yYoL6Qp/wB9Nk/ka9GtPhpo3hez861d5Npy7TzPKxPrliTXZy6Fo+l2Y+wkRIBwpNcf4m8QW+nwFZZRtPUZwBUVm1pOzJU1LVGTb3HmXBJwoB/SvrD4B6e1p4DjuHXb9rmaVeMZXhQf0r5E+HttJ8R/HWmaXCWi0t7lI5514JXPIX3xX35YWMGmWUFpbRiK3hQRxovRVAwBWmAptNzZ4+aVtFTXUnooor2j50KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACkd1jRmYgKBkk0pIAyTgV8t/GP9pq21L4q+FPhr4WuVuDe6tBDqt7E2V8sOC0KH6A7j+HrXTh8PPES5YLbfyRjVqxpRuzyL9vzWRrXiayhSUsbSAIUAwEJJbHucEGvjCLU5rSXDneB3719e/t3aBLoHi+x13LNpusR+W5/hjuIxj/AMeXH/fJr5AuzG7kj1rwcXFwqs+rwfLKhGx1mleLI1ZGS/8AssikHEmR+td9YfFZrOJc6tCzd+c/yrxH7Mk4Cnj3rW0bwq88ylz+6z1rico21R6UKcm/dZ7XN8cJXRUjvjcY6KkZ/ris+C51j4gakgkZ7e1z8xHUj+lZ/hvwdbyMmEwueuK9g0LR4LCCNYlAx3ArmlVvpFHWsOlrJnpv7P8Aocdj4y8P2cCbAspfp6KT/SvsWGeO4jDxOsiZIypyMg4Ir57/AGbfCrXery646n7PaK0cbkcNIRg4+g/nV3wN8Wrbwz8cvFfw+1m5EK3V4brSnc4GXUM0WfU5yPx9q+mwOHlKi5Lda/I+PzSrH6wo/I96ooorU80KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiqt/qlnpUBmvLqG1iHJeZwo/Wmk3og2LVFeOeN/wBqHwp4WjlSyZ9YuUz/AKo7Igfdj/QGvmT4ifti+J9XWZLe7TSrcg7YrIYOPdutevh8qxNfW3KvM4qmMpU9L3fkfcviHxnoXhSAzavq1pp6AZ/fzBSfoOp/CvF/F37a/gLw9K0Ni9zq0wz80aeXHx3y3OPwr86/FfxI1XXLqaS4uJbiWTlmdyxx9TWBb2l6yG8v2ZQ3McZ6n3PtX0VDIqMf4snL8EeZUzCo/gVj6l+MP7a/iHxvplxpOjqmhabOpWWSAkzSL6b+w+nNfPfwa1/7P+0T8P53bK/2xEpY/wC1lev41yV9NIVJIPt/k074fRy3PxX8GNESJV1e2Ktnn/WLXr1KFLDUHToxsccZzqz5pu5+pHxh+HekfFHwfeaDrUZksrgbklT/AFkEg+66H1H69K/Mz4ufBLxL8FdcEGpxNe6NK5Fpq0KkxSjsGP8AC3+yfwr9UtHlN+GtbwGOXHUjqPWs/wAT+CLa90y5s7+zj1PTbhdskMq7lYe4r83xFCNXR7n1+FxUqD8j8mLOEu6MBkGu/wDDdlL8qkFkzkDFev8Axi/ZFvvD5m13wLHLqOlLl5tL+9Pbeu3++v6j3rzPwzqEkMflyx+XNGdpVhtIPoRXy+IoTpOzR9zga1OuuaDPQ9EtPstqu5QuegNeq/CTwDqPxN1U21srQabbkfarzbhUH91fVj6VzfwV+Fus/F3V1QLJZ6HE3+k3+3qO6J6t/Kvu7wr4P07wfotvpelWy21pCMBV6se5J7k+tXhME5PnqbfmcuZZiqN6VL4vy/4JZ8OaDZeGtItdM06EQWluu1VHU+pJ7k9Sa/Nf9q7U5bj9oXxJPbyvHNZ3USxyRuVKsqLyD2NfpysbRgnsK/J74qaqPEXxP8YagSd0mqzjHsrlR+gr9CySK9tJ+R+dY6TcF3ufUHwe/bWMem2+neNLWSeSJQg1K3A3OOmXXoT7ivpnwn8TfDPjaJX0jV7e4cjPks2yQf8AATzX5W6eSpQDOzqwIrZ07Xr7wteqokf7M53RSqTlT6Z9RXrYnJqFVuVP3X+H3HFSxtSGktUfrDRXwr4E/aZ8U6BBGgvxqNuuP3V6N+R6Z6/rXu/hL9q7w/rCImq2k2mzdGeM+ZH/AEI/I183WyrE0tlzLy/yPTp4ulPrY9zorD0HxxoPiZFbTdVtrkt0RXAb8jzW5XkyjKDtJWZ2JqSugoooqRhRRRQAUUUUAFFFFABXgfxD/av03wtrMumaXp51GSKYwSXEj7YwwznGOTjFe2eItTTRdA1LUJGCJa20kxZjgDapP9K/JrVfHovojcrIzKtx5hfPLAt1/WvoMpwVPFOUqqulY87GV50klDdn0/4n/ao8W6irpbXkOmoeALaMBvzOT+VeReJ/ide6nK0l/qVxfTt1eaUtx+JryO88VO5ZvOORwP61lSapJdMcnIY4z7V9nSw1Gj8EUjwp1alT4mdFr3jCfUpdisQnXA7+lcxcmS6JLk88/Sp12Mu4nnP6UwsBlm/i5/CuxW6GViidKa4V1Tv/AJ61ylp4suPD+qf2brXnvAzEW9w+W/4CTXd28qzo6/aI4AOWZz29h3rD1S7sy3kwRLOVJzNKoJJ9h2rKba1i7MqKvuinqWoJcNlEKRDpuGCR/hW18Kobmf4seEDZor3K6pbtGjcAneDiuXkJdstyehzXf/s/4X43+Ay3/QZtgf8Av4K460m4tvsdEI2skfrN9khmgtrhFGSoYfjV+2WOSMo+MGqwUx+Za7SCnzx47qf8D/SuV+IfjZvAHhLUdWisptSvYIma3soRlpXxwPYepr4Bu59CkV/iX8Q/BfwYs11bxHqsenmU4htowXmnPoqLyR6noK+WfGfxw+D3jPXZNTvvCNzqerTkiIWStaRyAdPNcsNze4X86+QfF3xR8V+MfHepav4zed9amckxyRnbAmfljjU8BQOP/r1a8Mztrd7I7JuyfkUkZUkjJAr1MNgqeIj+9PUjGNCMZU5NzfRafj/wD9R/2evj74C8aabaeH9MgXwpqcKbI9FuwE3AcZhf7sg+nzeor31FCivyXvY5bLw3Pd3MQZYIy0bqNjIR/GpHRh6ivqT9h79qXUfiBYS+D/GE5m1W0IGnapIebyLGdjn++vr3HvXNisH7GPPGSaMq9O03yxkl5n19qNwttYXErEKqRsxJ7ACvx6v7tdW1rVr1XJS6vppo2/2Wckfoa/WD4i3xj8L3VqAS92phx32kfN+mfzr8ntXQJrGpqv7sC7mRVA4A3t0r08lWs36HiYzZFyxngSZEdTHKRw2PlYex9faoPFniu00y1TTjH9qubk/uoVPzL/t+wFVFudimNkEkZG0q3NJo2h6aLmd4FEly7DP2lsyN7Bj2HpX1LueQ4l7QNaeEJG5wCAQT0rrob9osPG2VIz16Vx15pxhZlx5LxndtYEcfSrlhdblMZk2yKM43da0aT2MU7aHoOl+J5YWXEjIeqsGwRXqfhL9oDxV4cRIo9Va8hX/llefvBj2J5/Wvng3xjHDY2/w5zxV6114x7fQcEmuapQhVVpxTNYVJQejsfaPh39q+KYKuraSAe8lrJ/Q/416b4b+NXhHxPcxW1vqiwXcuNsFypjYk9gTwT9DX562/iYKQd3DcUp8VLHqZIl2hYA2B1B3ev4V41XKMPP4bxZ3QxtSO+p+oVFcV8GfEp8W/DDw9qTzefLJaqkkhOSzr8pJ9+K7WvipxcJOD6HuRfMk0FFFFQUFFFFAHzh+398VE+F37OOtmOXy9Q1p00u2APzZfJc/git+Yr8rtF16STQHilc7gu/nsF5xX1f8A8FP/ABaPE/xS8L+FHmI0rQbNr+8APHmSHgfXaoA/3jXxLB4hXUtVdo0WKFyUCDoB0x+VfV5a3h6XM/tHkYhe1qWXQ7CHWjIobf1+brVk655QBDYOPWuEtLpliKE5KHbWjHKZCAThcjOa9qGIckckqKTOuXWJpiAG+U4FXxcPNJtJyDx/jXKx3u1lAG7BzWlBfMMYwGwa7IVTKUB1xc7NbaFmwHj+X8D/APXqaSFo27EsM1h6pcNDqNjdZICuFbPvx/WumuQSFdRwO9JSu2FrJGcy5JzxkV2PwVufsPxX8G3PQJqtqxJ9pVrlJFKNnjBGa3vAlwLTxho8+BiO9hb06OKmSumg2P2ZvbaV4Y57ZVa4jOQGOAR3Gawr7Rn1SKc3IHnuCuMcKPQV1tiRJAjDnIBqVrZCSdvNfnSlY+isfnr+0x+yhJJO+uWEjyXDbsKRwnfH0r400jWv+ER1SW3u3jhuBJscOpLrg84x0r9nfiSbWDTHe7Kpaxo7yu3RUCkk/pX5FT6Kmp+MtU1ySAxG7u5pFhbGFDMSn0wMV72XzeqezOmlCtO86Ojhrf8AA3/GnjSy8UeHbXTdMNw88zqmBBMgkJ4IBdQDnNfbPgD9k9PCPhDSW0uVoNdsokkM2fvyjk/rXz34Bu5dP+wXNvF9pks5UnhV1DKJEYMMjvyBX6U+FdWtfE2gafrFou2G7hEm3upPUH6HIp5lzU4xhZWFUrSrP2km23vf9DktQnv73RraXVEC3ccIWQL03Y+Y1+XN5ILi/vZwc+ZPIy/i5Oa/Vb4izrYeH9SuTwIbaSQn6IT/AEr8mbKQi2iLHJCD8SRXTk6upv0PFxfQmlAAY5BCjH41Wtlf7RvBOB2Hc1PcMI06cDk+5qK0YhFzwSctxX0h55Pdancm5jjeYuY155yAD2FVH1EocFjuB2g4qtJcYuZH6ksSMdfSo7qczOWAzk5PFaLRGdrs1LLXRcEKQFPIYE9Kdc6v5ZLA/KR0rjZZ3trhmHyqG4FTf2l5ik5Jxms/aq9h+yvqdhDrRbGWIAwfeqreICLi+cHfkiJfwH+LGuZGpeQhbnAB6msq21FpLaNyx3MS7E+uTUyqLYfsz9Kf+CevjSbXvhlrOiXT7p9Iv8KCeRHIu4fqGr6rr8+/+CdfiuOP4g61p/mALqenBsZ6ywuMfmjuf+A1+glfn+ZU/Z4mXnr957+GlzUl5BRRRXmHUFV9Qv7fS7G4vLuZLe1gRpZZpDhUUDJJPoBVivgf/gpn+083g/QD8N9DuNl/fxh9SljblIzysf48E+2K2pU3Vlbp1InLlVz4k/ay+MMfxb+MfiK/02RjZXF0Qjnq6L8qfhgfqa8wtrUackfduCazfDNi2oXUt1KT5cY3Fq0Ly43vkHjNfSwd4qT9F6I81qzsiaCXZqEy543Z/Pmtu1fDA9PWuVWbGqDn7yg1vwz/AC4WumlLoRJdTZjkVCckZFXLaVmYk9CecVjW2X7nrWpbOIlB6kc13xZg0S6tbefpkpxz1B75FdBol0NU0S3mAyzRjcPQ45rGkcvEVzgFccVL4Gl8iO9sjg+VLkDP8J5reL99eZm07GlIPlwR06mrXh248rVbRixDJMp5+tQT4ErrgYNN09Gju4/4Tnv61tfUlqyP2y8NXZm0axkJzvgjbP1UVsbt1cr4Ak+0eC9AlznfYwHP/ABXT5Cxk1+cTVpNHvxd0j52/bH8WtoPwz1O2hcLcX4FmpJ6Bz83/joYfjX582UU+pzvHLbNO6Pu/djKjPGSa+u/20dWF5/Yto0u3zryRtvYqi45/Fq+fbCa3jmXEaklgv7r5QxxX1mCj7LDRkoXbZ3YJKpOcJVeRNa+f5/kdN4Mlh03To4/nO0cgjGD3wfxr7b/AGY9WN/8O5LZn3G0unQA9VVsMB+tfE3h/T1lu2ViXgjI3AnHJr68/ZJhW38P+IIVJYLcxnJ90P8AhXNmKpuEmnroxv6xLDR9olyxdk+un5rtr0Z0n7RWof2V8IvGV3nBj0m5x9TGwH6mvy3hG2EZ6AZr9J/2xL8af8CfFBJA86KOAZ775UX+tfmqucYbk9SBXTk6/dSfmfPYvWSQ5ztkweh5PtRcSLb2UkykNhckenpUccLSO2TuLc7vaqWrS7IooATumbcR6Bf/ANYr3mziSIVYRwBQfujt3qN5T1BOCCM1GkgeM7j0x35qKW4VgQOCcEUuboPl6lLU5CNw3ZUgHgYrLgvdkhycYP6Vp3KZBGeoI9a5+7Ty5SRx9K5arurmkEk7MtXN+Egmy5wQevrTYAGhRBxtTGDWBq91+5xnqwArT0y+EcqZOOnWsFPmkN6I7H4O/Fy/+EfxA0vW7Rz5lrMGZM8OvRlP1BI/Gv2e+H3jjTfiR4O0rxHpMqzWV/CJFwclD/Ep9wcg/Svwq8baNJCkWoQcxvzkdBX2r/wTA+Ocq63qPw9v7gtBdobuzRz92VR84H1Xn/gNeNmVHmjd/FH8UdWGnZ2WzP0hooor5c9UK/Bb9tXxPceJf2nfiC8rs3latLboCc4VPkA/Ja/emvwf/au8Nvon7W/xJhukJih1aS7ww4ZZAJE/MOK68MnKfKuplUdlc87aT+xdEhsRhZpf3kvr7Cs9G8zgk1Bd3jXk7yOSSTkk1NbDC5r23LmdlsjhStqyCeXy9Qt+v3SK6K0cAA+tcjqEmy9hPoa3LO7+TOeaKU7SY5q6R0cN3tXjir8VzvVW+nWuVOoBRjOant9VBkUbq741ooxcGdtFJxjOM1Xsrg6f4lhfO2O6Qoe3I5H9aqWFyXGevFJrIYwJcJy8DLID6YNdnNpzLoZWOzuiwViuScZzVeFmEoJ6+gqaGdrm0SSPG10DDb6VFChDZY4Irs32Mmfsp8HLgXfwm8Hzg536ZbnP/ABXZ3b7LRz/ALJrzP8AZrvv7Q+AngeTqf7OjT/vnI/pXoWrS7bOf2Q/yr4CsrVZLzf5ntU/gT8kfCv7Vd6t54x0KwEoWT7NPNsIzwZFGf0NeQ6Dp/2uV3nBQEbY3B44613X7UVnJe/F22mWdokttIjjfb23SSHP48V5joeq3Fs8Ubsgh5G7GSM19bh1NYa1J6/kejSVFVKX1uFo23767v73rpr6HcRXLabI3kMEQkEKR1/ya+t/2O7kXWieJX2uCbiEkv3+Vq+O9GmiW5dmYbAMfvMkn6elfXn7IF/E+l+Jo4ySqSQcdh8r1yZl/Cfu66a/cRBJ0JNVNL6R/VGb+3jq6w/CT7Ap+e5v7dT9Axb/ANlr89bl+eB1Ffaf7furlfDWi2wPzT35b6BUb/GviZyWdiQc8YNdOVrlofM8LEazJreaQMTu5YbRx2rC1C8FxqkhXlYh5a45Hv8AzrXnmW1tWlLZVVJPPSuXsX3EswIZzuP1r1ZSOZLuWHuTnAOBzxVOW5ITpg+/NJMzCV17g1TlLOjkdvSi9kQ9S59tBUZz+FY+pTYJxjntThMyOAw4BxxVHU8hsgH6VxznoaJGBqMxa4gQ8/PmtO43wxLIuexrnr243anGAcbQTXbaVbDVNOCD7wHFcdOXNJ2NZLTU0PDWrw6zp0+l3RGJB8jN2btVv9nzxLcfDD9ozwZf7miWDVoY5h0zG7hHH/fLGuCuBLo1/uGV2muqsduv65oOqW6/6ZDeQiYL1bDrtb+Q/KlW/fU2nuhQXs5XR+9NFA6UV8Ue2FfjN/wUn1zQr79pnXhofzXC29vDqUinhrhEwQPouwH3Br9mH4RvpX893xwnlufi14skmkeWRtUuCzuxJP7xupNduF0bZjV2scXDlq1bZd0IrNt/vGtm2H7kV61I45HNayxW5T2ar9vP8tZ+vf8AH3+NWIvuj8KwvabNLXSLElwcU2GRjIDmoH+9T4fvj6007sdjsdHumVV+b8BXQF1urdgwPzA5rlNIJ2iumtfuj6GvdpO8TjktTX8EaoW0427kZgYxsCe3b9K2QV87AOecCuP8If8AIa1QdvkOPfBrqT/r899wrrpSbirmUkfq1+xtfG9/Z88JAtu8qOWP8pnAr1zXphFaSE9CpFeE/sKsW/Z70gkkn7Rcjk/9NWr2vxccaa30r47Eq2JmvNnp0nenH0Pzn/aA8UrqXxt8T2YYxm1htYQ5YYwIgxAH1euF8M3MEc++7xtZ/lm6sMdOPwqx8VgJf2gPGW8b/wDSB97npAmKyjGiyyYUDEgAwOnBr67D0F9Xsna6TPQhjZc9OU4p8ui7f1+PmdjqV8bgpcW0vnJjYeMZJJHFfWn7F0Rt/D/id23b2aDfv65AevizQnYpZKWJUS8AnjqK+z/2OyToXi05582H+T15+YXp0FSvp/wTpcKeIhWxTjZ+7p0Tdr/5HlP7fGqb7rwzag5bzJnGOcfKB/WvlG2ZJZGjJ6cDjvX0l+3QxPjDw0CSR5U/80r5WmdluMgkHI6GuzAaYeJ8vX+Mm8ZTR2WnrErE7zg4H8I5NcwutIioUtZ3AGOEwD+JrS1di8sG4lvkbrzXM3CgFCABW1STT0Jik9zRm1uaQZSyZT1JeSNcf+PVmTandEklrSIH1mY4/wC+UNQYB8zjuapyj90PrWMpy7isr7Es+oORh7uNDnny4GfH5lajlv3ktWRpPM2nhtu3I+mT/OqMpPm9ajcko/4VyXbNDn5LnzNXk7YGMV3nhLUWt5EG7ivNUJ/tib/ersdGJBTmscNJ8zZpNWVjufFGhR6ja/aoRuyMnArmPCmu3fg/xFaXcW3dbzLIquMgkMDyPwrvvD5L6TIGO4bTwa4HX1Au2wAOR0r1sRBK011OOm220ful8H/iXYfFv4eaP4m09l23kIM0anPlSgYdPwOa7OvjH/gl/cSyfCfxHG8jtHHqS7EZiQuYxnA7V9nV8JiKapVZQWyPehLmimf/2Q==" alt="Sayid Omar Al Faisal"></div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <h2 class="section-title" data-reveal>About</h2>
+    <p data-reveal>I studied education at the Institute of Education and Research, University of Dhaka, and somewhere along the way storytelling took over. Most of my work now sits at the crossing point of the two: documentary films made for NGOs and INGOs, built on the same research instincts I picked up in my degree.</p>
+    <p data-reveal>I have filmed in tea gardens in Rangamati, school kitchens in Lalmonirhat, and flood-prone villages in Pabna, always working closely with field teams to get consent, comfort, and honest stories on camera. Outside client work, I run Lens Flare Studio and stay active in youth and environmental volunteering across Dhaka.</p>
+  </div>
+</section>
+
+<section class="alt" id="experience">
+  <div class="wrap">
+    <h2 class="section-title" data-reveal>Experience</h2>
+
+    <div class="exp-item">
+      <div class="exp-date">Sep 2023 &ndash; Present</div>
+      <div>
+        <div class="exp-role">Founder &amp; CEO</div>
+        <div class="exp-org">Lens Flare Studio, Dhaka</div>
+        <p class="exp-desc">Run a photography and videography service covering weddings, promotions, modeling, and corporate events. Work as Chief Photographer, leading creative direction and client relationships across every project.</p>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-date">Jan &ndash; Feb 2025</div>
+      <div>
+        <div class="exp-role">Project Documentary Producer</div>
+        <div class="exp-org">SUN Youth Network Bangladesh, via GAIN &middot; Lalmonirhat</div>
+        <ul class="exp-desc">
+          <li>Wrote and produced a short documentary on affordable school meals and their effect on children's nutrition and attendance.</li>
+          <li>Led interviews with stakeholders, filmed on location, and ran post-production including edit and sound design.</li>
+          <li>Delivered a final film used for advocacy and donor engagement.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-date">Nov &ndash; Dec 2024</div>
+      <div>
+        <div class="exp-role">Documentary Videographer</div>
+        <div class="exp-org">ICCCAD &middot; Chattogram, Rangamati, Rajshahi, Pabna</div>
+        <p class="exp-desc">Travelled to four field regions to film climate change and adaptation projects, capturing interviews with community members, local leaders, and project staff on the ground.</p>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-date">Nov &ndash; Dec 2023</div>
+      <div>
+        <div class="exp-role">Bootcamp Facilitator</div>
+        <div class="exp-org">Bangladesh Youth Leadership Center, Dhaka</div>
+        <p class="exp-desc">Facilitated the Development Sector Career Bootcamp 2023, hosted on camera, coordinated trainers and participants, and supervised capstone projects.</p>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-date">Oct 2022 &ndash; Feb 2023</div>
+      <div>
+        <div class="exp-role">Creative Designer Intern</div>
+        <div class="exp-org">Physically-Challenged Development Foundation, Dhaka</div>
+        <p class="exp-desc">Produced graphic design and video content for a youth-led organization supporting young people with disabilities, working across a team aged 16 to 35.</p>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-date">Jul &ndash; Dec 2023</div>
+      <div>
+        <div class="exp-role">Intern Teacher</div>
+        <div class="exp-org">Happy Times Ideal School &amp; College, Dhaka</div>
+        <p class="exp-desc">Taught Bangla and English to Class 6&ndash;10, built lesson plans and assessments, and analyzed student performance data using SPSS.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="feature-card" data-reveal>
+      <div class="tag">Recognition, 2025</div>
+      <h3>Top 10, WaterAid "Pothe Holo Dekha" Digital Content Campaign</h3>
+      <p>Recognized nationwide for "Hold It In &ndash; A Woman's Daily Struggle," a short film on water, sanitation, and gender, selected among the top 10 entries in Bangladesh.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="skills">
+  <div class="wrap">
+    <h2 class="section-title" data-reveal>Skills</h2>
+    <div class="skills-list" data-reveal>
+      <span class="skill-pill">Documentary Directing</span>
+      <span class="skill-pill">Cinematography</span>
+      <span class="skill-pill">Video Editing</span>
+      <span class="skill-pill">Strategic Communication</span>
+      <span class="skill-pill">Storytelling</span>
+      <span class="skill-pill">Graphic Design</span>
+      <span class="skill-pill">Content Creation</span>
+      <span class="skill-pill">Data Analysis</span>
+      <span class="skill-pill">Google Workspace</span>
+      <span class="skill-pill">Microsoft Office</span>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap two-col">
+    <div>
+      <h2 class="section-title" data-reveal>Education</h2>
+      <div class="col-item">
+        <h4>Bachelor of Education (BEd)</h4>
+        <div class="sub">Institute of Education and Research, University of Dhaka &middot; 2020&ndash;2024</div>
+        <p>Focused on Language Education: teaching methodology, language acquisition, curriculum design, and educational research for English and Bengali.</p>
+      </div>
+      <div class="col-item">
+        <h4>Higher Secondary Certificate, Humanities</h4>
+        <div class="sub">Govt. Majid Memorial City College, Khulna &middot; 2017&ndash;2019</div>
+        <p>GPA 5.00, second position in the Jessore Board.</p>
+      </div>
+    </div>
+    <div>
+      <h2 class="section-title" data-reveal>Volunteering</h2>
+      <div class="col-item">
+        <h4>Program Co-ordinator, Green Man</h4>
+        <div class="sub">2019 &ndash; Present</div>
+        <p>Coordinated youth development and environmental initiatives reaching over 12,000 people.</p>
+      </div>
+      <div class="col-item">
+        <h4>Vice-President, Dhaka University IT Society</h4>
+        <div class="sub">2025 &ndash; Present</div>
+        <p>Oversee visual content and design strategy for club events and outreach.</p>
+      </div>
+      <div class="col-item">
+        <h4>Organizing Secretary, IER Language &amp; Cultural Club</h4>
+        <div class="sub">2022 &ndash; 2023</div>
+        <p>Produced event videos and led logistics for cultural programs and competitions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2 data-reveal>Working on a documentary, campaign film, or shoot? Let's talk.</h2>
+    <div class="footer-links">
+      <a href="mailto:saayidfaisal@gmail.com">saayidfaisal@gmail.com</a>
+      <a href="tel:+8801644541259">+880 1644541259</a>
+      <a href="https://www.linkedin.com/in/sayidomaralfaisal/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="footer-bottom">
+      <span>Sayid Omar Al Faisal &middot; Dhaka, Bangladesh</span>
+      <span>Lens Flare Studio</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var bar = document.getElementById('progress');
+    function onScroll(){
+      var h = document.documentElement;
+      var scrolled = h.scrollTop;
+      var max = h.scrollHeight - h.clientHeight;
+      bar.style.width = (max > 0 ? (scrolled / max) * 100 : 0) + '%';
+    }
+    document.addEventListener('scroll', onScroll, { passive:true });
+    onScroll();
+
+    var items = document.querySelectorAll('[data-reveal]');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){
+            e.target.classList.add('in');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      items.forEach(function(el){ io.observe(el); });
+    } else {
+      items.forEach(function(el){ el.classList.add('in'); });
+    }
+  })();
+</script>
 </body>
 </html>
